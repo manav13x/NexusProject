@@ -1,0 +1,78 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" style="padding-top:5px">
+    <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a routerLink='' class="navbar-brand" style="padding-top: 6px;"><span><img src="../favicon.ico" style="width:35px;height:35px;" /></span>
+            <strong style="color: goldenrod">NexusCorp</strong>
+        </a>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a routerLink='/'><span class="glyphicon glyphicon-home"></span>&nbsp;<strong style="color: goldenrod">Home</strong></a></li>&nbsp; &nbsp;
+                <li><a routerLink='/buynexplore'><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp; <strong style="color: goldenrod">Buy N Explore</strong></a></li>&nbsp; &nbsp;
+                <li><a routerLink='/payandrecharge'><span class="glyphicon glyphicon-credit-card"></span>&nbsp;<strong style="color: goldenrod">Pay And Recharge</strong></a></li>&nbsp; &nbsp;
+                <li><a routerLink='/helpdesk'><i class="fa fa-question"></i>&nbsp;<strong style="color: goldenrod">Helpdesk</strong></a></li>&nbsp; &nbsp;
+                <li *ngIf="user"><a style="color: darkcyan">{{user}}</a></li>
+                <li class="dropdown"><a href='' class="dropdowm-toggle" data-toggle="dropdown"><i class="fa fa-user "></i>&nbsp;<b class="caret" style="color: goldenrod"></b></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-header">Accounts</li>
+                        <li class="dropdownclass"><a routerLink='/account'><strong>Login</strong></a></li>
+                        <li class="dropdownclass"><a routerLink="/regForm"><strong>Update Profile</strong></a></li>
+                        <li class="dropdownclass"><a routerLink="/billdashboard"><strong>Manage Bills</strong></a></li>
+                        <li class="divider"></li>
+                        <li class="dropdownclass"><a routerLink="" (click)="logOut()"><strong>Sign Out</strong></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>
+
+<footer id="myFooter" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2 class="logo"><a href="#"> NEXUS </a></h2>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <div class="social-networks">
+                        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="google"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <a class="btn btn-default" routerLink='/helpdesk'>Contact us</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2016 Copyright Text </p>
+        </div>
+    </footer>
